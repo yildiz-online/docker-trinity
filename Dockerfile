@@ -7,8 +7,9 @@ FROM moussavdb/build-java-native as build
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
 COPY --from=clone /app/TrinityCore /app
-COPY /app/build.sh /app
-RUN ls -l
+RUN mkdir build
+COPY /app/build.sh /app/build
+RUN cd build
 RUN chmod +x build.sh
 RUN ./build.sh
 
