@@ -7,7 +7,9 @@ FROM moussavdb/build-java-native as build
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
 COPY --from=clone /app/TrinityCore /app
-RUN sudo apt-get install make
+RUN make --version
+RUN g++ --version
+RUN cmake --version
 RUN cmake .
 
 FROM ubuntu:bionic
