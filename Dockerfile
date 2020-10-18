@@ -11,7 +11,7 @@ RUN mkdir /app/build
 WORKDIR /app/build
 RUN cmake ..
 
-FROM ubuntu:bionic
+FROM ubuntu:latest
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
 COPY --from=build /app/build /app
